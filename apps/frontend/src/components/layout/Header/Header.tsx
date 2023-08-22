@@ -31,10 +31,8 @@ const Header: React.FC<IProps> = (props: React.PropsWithChildren<IProps>) => {
 		if (props.isMenuOpen) {
 			setIsMenuVisibleState(() => false);
 			setTimeout(() => props.toggelMenu(false), 700);
-			document.body.style.overflow = 'auto';
 		} else {
 			setTimeout(() => document.body?.scrollTo(0, 0), 1000);
-			document.body.style.overflow = 'hidden';
 			props.toggelMenu(true);
 			setIsMenuVisibleState(() => true);
 		}
