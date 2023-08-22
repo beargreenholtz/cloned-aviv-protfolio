@@ -1,0 +1,34 @@
+name: Integration
+
+on:
+    pull_request:
+        branches: [main]
+
+jobs:
+    test_pull_request:
+        name: Testing & Checking the code
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18.16.0
+
+            - name: Installing dependencies
+              run: yarn install --immutable --immutable-cache --check-cache
+
+            - name: Check unused dependencies
+              run: yarn run depcheck:all
+
+            - name: Check Files and Directories Linter
+              run: yarn run inflint
+
+            - name: Check Typescript
+              run: yarn run type-check:all
+
+            - name: Check ESLint
+              run: yarn run lint:all

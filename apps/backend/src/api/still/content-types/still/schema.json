@@ -1,0 +1,27 @@
+{
+	"kind": "collectionType",
+	"collectionName": "stills",
+	"info": {
+		"singularName": "still",
+		"pluralName": "stills",
+		"displayName": "Still",
+		"description": ""
+	},
+	"options": {
+		"draftAndPublish": true
+	},
+	"pluginOptions": {},
+	"attributes": {
+		"media": {
+			"type": "media",
+			"multiple": true,
+			"required": true,
+			"allowedTypes": ["images"]
+		},
+		"categories": {
+			"type": "relation",
+			"relation": "oneToMany",
+			"target": "api::still-category.still-category"
+		}
+	}
+}

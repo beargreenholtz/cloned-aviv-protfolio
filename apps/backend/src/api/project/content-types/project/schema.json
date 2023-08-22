@@ -1,0 +1,48 @@
+{
+	"kind": "collectionType",
+	"collectionName": "projects",
+	"info": {
+		"singularName": "project",
+		"pluralName": "projects",
+		"displayName": "artwork",
+		"description": ""
+	},
+	"options": {
+		"draftAndPublish": true
+	},
+	"pluginOptions": {},
+	"attributes": {
+		"name": {
+			"type": "string",
+			"required": true,
+			"maxLength": 28
+		},
+		"date": {
+			"type": "date",
+			"required": true
+		},
+		"country": {
+			"type": "string",
+			"required": true
+		},
+		"city": {
+			"type": "string"
+		},
+		"description": {
+			"type": "richtext",
+			"required": false
+		},
+		"media": {
+			"type": "media",
+			"multiple": true,
+			"required": true,
+			"allowedTypes": ["images"]
+		},
+		"order": {
+			"type": "integer",
+			"unique": true,
+			"min": 1,
+			"required": true
+		}
+	}
+}

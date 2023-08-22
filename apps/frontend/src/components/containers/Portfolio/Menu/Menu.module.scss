@@ -1,0 +1,180 @@
+@use 'sass:map';
+
+@import '../../../../styles/variables.scss';
+
+@keyframes slide-in {
+	from {
+		transform: translateX(-100%);
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes fade-out {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	padding: 64px 0 105px 64px;
+	background-color: #000;
+	opacity: 0;
+
+	&--active {
+		z-index: 1;
+		opacity: 1;
+		animation: fade-in 0.5s;
+	}
+
+	&--fade-out {
+		opacity: 0;
+		animation: fade-out 0.5s;
+	}
+
+	.backButtonContainer {
+		display: flex;
+		align-items: center;
+
+		&__text {
+			font-size: 32px;
+			font-weight: 700;
+			color: #fff;
+			text-decoration: none;
+		}
+
+		&__icon {
+			display: none;
+		}
+	}
+
+	.linksContainer {
+		display: flex;
+		flex-direction: column;
+		margin-top: 56px;
+
+		.innerLink {
+			display: flex;
+			align-items: center;
+
+			&__title {
+				margin-inline-end: 64px;
+				font-size: 16rem;
+				font-weight: 500;
+				color: #fff;
+				text-decoration: none;
+
+				&--active {
+					color: #268741;
+				}
+			}
+
+			&__icon {
+				display: none;
+				width: 62px;
+				height: 37px;
+				fill: #268741;
+				transition: fill 0.2s ease-in-out;
+				transform: rotate(-90deg);
+
+				&--active {
+					display: block;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	.mobileImageContainer {
+		display: none;
+	}
+}
+
+@media (max-width: map.get($sizes, main-mobile-width)) {
+	.container {
+		z-index: 7;
+		padding: 16px;
+
+		.backButtonContainer {
+			&__icon {
+				display: flex;
+				width: 20px;
+				height: 19px;
+				margin-inline-end: 8px;
+				cursor: pointer;
+				fill: #fff;
+			}
+
+			&__text {
+				font-size: 2.4rem;
+			}
+		}
+
+		.linksContainer {
+			display: flex;
+			flex-direction: column;
+			margin-top: 16px;
+
+			.innerLink {
+				&__title {
+					margin-inline-end: 16px;
+					font-size: 6.4rem;
+				}
+
+				&__icon {
+					width: 24px;
+					height: 14px;
+				}
+			}
+		}
+
+		.mobileImageContainer {
+			display: flex;
+			flex-direction: column;
+			margin-top: 64px;
+			animation: slide-in 0.5s;
+
+			&__image {
+				display: block;
+				width: 100%;
+			}
+
+			&__name {
+				margin: 16px 0 4px;
+				font-size: 2.4rem;
+				font-weight: 500;
+				color: #fff;
+			}
+
+			&__date {
+				font-size: 2rem;
+				font-weight: 400;
+				color: #fff;
+			}
+		}
+	}
+}

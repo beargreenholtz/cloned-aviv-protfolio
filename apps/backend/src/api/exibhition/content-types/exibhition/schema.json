@@ -1,0 +1,36 @@
+{
+	"kind": "collectionType",
+	"collectionName": "exibhitions",
+	"info": {
+		"singularName": "exibhition",
+		"pluralName": "exibhitions",
+		"displayName": "exibhition",
+		"description": ""
+	},
+	"options": {
+		"draftAndPublish": true
+	},
+	"pluginOptions": {},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"required": true
+		},
+		"location": {
+			"type": "string",
+			"required": true
+		},
+		"link": {
+			"type": "string",
+			"required": true
+		},
+		"startDate": {
+			"type": "date",
+			"required": true
+		},
+		"endDate": {
+			"type": "date",
+			"required": false
+		}
+	}
+}

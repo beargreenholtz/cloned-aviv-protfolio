@@ -1,0 +1,171 @@
+@use 'sass:map';
+
+@import '../../../../../styles/variables.scss';
+
+.container {
+	display: flex;
+	flex-direction: column;
+	margin-top: 92px;
+
+	.imagesContainer {
+		display: flex;
+		width: 100%;
+		height: 668px;
+
+		&--reverse {
+			flex-direction: row-reverse;
+		}
+
+		.bigImageContainer {
+			display: flex;
+			flex: 1 0 75%;
+			flex-direction: column;
+			margin-inline-end: 8px;
+
+			&--reverse {
+				margin: 0 0 0 8px;
+			}
+
+			.bigImageLinkContainer {
+				width: 100%;
+				height: 100%;
+
+				&__image {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+
+		.lineImagesContainer {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+
+			.lineImagesLinkContainer {
+				width: 100%;
+				height: 32.6%;
+
+				&__image {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			.lineImagesLinkContainer:not(:last-child) {
+				margin-bottom: 8px;
+			}
+		}
+	}
+
+	.infoContainer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 18px;
+
+		&__name {
+			font-size: 4.8rem;
+			font-weight: 500;
+			color: #1e1e1e;
+			white-space: nowrap;
+		}
+
+		.locationContainer {
+			display: flex;
+			align-items: center;
+
+			&__date {
+				font-size: 3.6rem;
+				font-weight: 400;
+				color: #1e1e1e;
+			}
+
+			&__city {
+				font-size: 3.6rem;
+				font-weight: 400;
+				color: #1e1e1e;
+			}
+
+			&__country {
+				margin: 0 8px;
+				font-size: 3.6rem;
+				font-weight: 400;
+				color: #1e1e1e;
+			}
+		}
+	}
+
+	.infoContainerMobile {
+		display: none;
+	}
+}
+
+@media (max-width: map.get($sizes, main-mobile-width)) {
+	.container {
+		height: 100%;
+		margin-top: 48px;
+
+		.imagesContainer {
+			height: auto;
+
+			&--reverse {
+				flex-direction: row;
+			}
+
+			.bigImageContainer {
+				width: 100%;
+				height: 250px;
+				margin: 0;
+
+				&--reverse {
+					margin: 0;
+				}
+			}
+
+			.lineImagesContainer {
+				display: none;
+			}
+		}
+
+		.imagesContainer:not(:first-child) {
+			margin-top: 55px;
+		}
+
+		.infoContainer {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			padding-inline: 16px;
+			margin-top: 10px;
+
+			&--reverse {
+				align-items: flex-end;
+			}
+
+			&__name {
+				font-size: 24px;
+			}
+
+			.locationContainer {
+				display: flex;
+				margin-top: 4px;
+
+				&__date {
+					font-size: 20px;
+				}
+
+				&__city {
+					font-size: 20px;
+				}
+
+				&__country {
+					margin: 0 5px;
+					font-size: 20px;
+				}
+			}
+		}
+	}
+}

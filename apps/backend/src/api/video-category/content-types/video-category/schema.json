@@ -1,0 +1,20 @@
+{
+	"kind": "collectionType",
+	"collectionName": "video_categories",
+	"info": {
+		"singularName": "video-category",
+		"pluralName": "video-categories",
+		"displayName": "Video category",
+		"description": ""
+	},
+	"options": {
+		"draftAndPublish": true
+	},
+	"pluginOptions": {},
+	"attributes": {
+		"name": {
+			"type": "string",
+			"required": true
+		}
+	}
+}

@@ -1,0 +1,29 @@
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.backdrop {
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	background: #000c;
+	animation: fade-in ease 0.7s;
+
+	.modal {
+		width: 80%;
+		height: auto;
+		max-height: 80vh;
+		object-fit: cover;
+	}
+}

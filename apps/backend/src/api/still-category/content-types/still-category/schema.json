@@ -1,0 +1,19 @@
+{
+	"kind": "collectionType",
+	"collectionName": "still_categories",
+	"info": {
+		"singularName": "still-category",
+		"pluralName": "still-categories",
+		"displayName": "Still category"
+	},
+	"options": {
+		"draftAndPublish": true
+	},
+	"pluginOptions": {},
+	"attributes": {
+		"name": {
+			"type": "string",
+			"required": true
+		}
+	}
+}

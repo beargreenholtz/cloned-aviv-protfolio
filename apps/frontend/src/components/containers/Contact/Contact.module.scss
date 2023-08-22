@@ -1,0 +1,236 @@
+@use 'sass:map';
+
+@import '../../../styles/variables.scss';
+
+.container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	background-color: #268741;
+
+	.innerContainer {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		padding: 172px 315px 16px 64px;
+
+		&__title {
+			position: relative;
+			left: -15px;
+			align-self: flex-end;
+			margin-bottom: 42px;
+			font-size: 11rem;
+			color: #fff;
+		}
+	}
+
+	.contactContainer {
+		display: flex;
+		justify-content: space-between;
+
+		.leftSide {
+			display: flex;
+			flex-direction: column;
+
+			&__textMobile {
+				display: none;
+			}
+
+			&__title {
+				margin-bottom: 32px;
+				font-size: 2.4rem;
+				font-weight: 500;
+				color: #fff;
+			}
+
+			&__adressText {
+				font-size: 3.2rem;
+				font-weight: 600;
+				color: #fff;
+			}
+
+			.mailWeb {
+				display: flex;
+				flex-direction: column;
+				margin-top: 56px;
+
+				&__title {
+					margin-bottom: 32px;
+					font-size: 2.4rem;
+					font-weight: 500;
+					color: #fff;
+				}
+
+				&__phoneNumber {
+					margin-bottom: 8px;
+					font-size: 3.2rem;
+					font-weight: 400;
+					color: #fff;
+					text-decoration: none;
+				}
+
+				&__mail {
+					font-size: 3.2rem;
+					font-weight: 400;
+					color: #fff;
+					text-decoration: none;
+				}
+			}
+		}
+
+		.rightSide {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			margin-inline-end: 108px;
+
+			&__title {
+				margin-bottom: 32px;
+				font-size: 2.4rem;
+				font-weight: 500;
+				color: #fff;
+			}
+
+			&__socialButton {
+				font-size: 3.2rem;
+				font-weight: 400;
+				color: #fff;
+				text-decoration: none;
+			}
+
+			&__socialButton:not(:last-child) {
+				margin-bottom: 8px;
+			}
+
+			&__icon {
+				width: 38px;
+				height: 38px;
+				margin-right: 8px;
+				filter: invert(1);
+				fill: transparent;
+			}
+
+			&__textDesktop {
+				margin-top: auto;
+				font-size: 48px;
+				color: #fff;
+				text-decoration: none;
+				white-space: nowrap;
+			}
+		}
+	}
+
+	.mailMobile {
+		display: none;
+	}
+
+	.mobileSignature {
+		display: none;
+	}
+}
+
+@media (max-width: map.get($sizes, main-mobile-width)) {
+	.container {
+		width: 100%;
+		height: auto;
+
+		.innerContainer {
+			padding: 63px 32px 0;
+
+			&__title {
+				position: static;
+				align-self: initial;
+				margin-bottom: 48px;
+				font-size: 6.4rem;
+			}
+		}
+
+		.contactContainer {
+			flex-direction: column;
+
+			.leftSide {
+				&__textMobile {
+					display: block;
+					margin-bottom: 48px;
+					font-size: 3.6rem;
+					color: #fff;
+					text-decoration: none;
+					white-space: nowrap;
+				}
+
+				&__title {
+					margin-bottom: 32px;
+					font-size: 2.4rem;
+					font-weight: 500;
+					color: #fff;
+				}
+
+				&__adressText {
+					font-size: 3.2rem;
+					font-weight: 600;
+					color: #fff;
+				}
+
+				.mailWeb {
+					display: none;
+				}
+			}
+
+			.rightSide {
+				align-items: flex-end;
+				margin-inline-end: 0;
+				margin-top: 48px;
+
+				&__title {
+					margin-bottom: 32px;
+					font-size: 2.4rem;
+					font-weight: 500;
+					color: #fff;
+				}
+
+				&__socialButton {
+					font-size: 3.2rem;
+					font-weight: 400;
+					color: #fff;
+					text-decoration: none;
+				}
+
+				&__textDesktop {
+					display: none;
+				}
+			}
+		}
+
+		.mailMobile {
+			display: flex;
+			flex-direction: column;
+			align-items: initial;
+			margin-top: 48px;
+
+			&__title {
+				margin-bottom: 32px;
+				font-size: 2.4rem;
+				font-weight: 500;
+				color: #fff;
+			}
+
+			&__text {
+				font-size: 3.2rem;
+				font-weight: 400;
+				color: #fff;
+				text-decoration: none;
+			}
+		}
+
+		.mobileSignature {
+			display: block;
+			margin: 71px 0 7px;
+			font-size: 2rem;
+			font-weight: 700;
+			color: #fff;
+			text-align: center;
+		}
+	}
+}

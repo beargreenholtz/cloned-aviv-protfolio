@@ -1,0 +1,125 @@
+@use 'sass:map';
+
+@import '../../../styles/variables.scss';
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 map.get($sizes, minimal-web-padding) 116px map.get($sizes, minimal-web-padding);
+	margin-top: 170px;
+
+	&__image {
+		width: 100%;
+		height: auto;
+	}
+
+	.innerContainer {
+		display: flex;
+		align-items: flex-start;
+		height: 608px;
+		margin-top: 42px;
+
+		.infoContainer {
+			display: flex;
+			flex-direction: column;
+			width: 50%;
+
+			&__title {
+				font-size: 3.2rem;
+				font-weight: 600;
+			}
+
+			&__text {
+				margin-top: 32px;
+				font-size: 2.4rem;
+			}
+		}
+
+		.divider {
+			height: 97px;
+			margin: auto 34px;
+			border: 1px solid #1e1e1e;
+		}
+
+		.exhibitionsContainer {
+			display: flex;
+			flex-direction: column;
+			width: 50%;
+			height: 100%;
+
+			&__title {
+				margin-bottom: 32px;
+				font-size: 3.2rem;
+				font-weight: 400;
+			}
+
+			.innerExihitions {
+				display: flex;
+				flex-direction: column;
+				height: 100%;
+				overflow-y: auto;
+
+				&::-webkit-scrollbar {
+					display: none;
+				}
+
+				-ms-overflow-style: none;
+				scrollbar-width: none;
+			}
+		}
+	}
+}
+
+@media (max-width: map.get($sizes, main-mobile-width)) {
+	.container {
+		padding: 0 0 104px;
+		margin-top: 72px;
+
+		&__image {
+			width: 100%;
+			height: 100%;
+		}
+
+		.innerContainer {
+			flex-direction: column;
+			width: 100%;
+			height: 100%;
+			padding: 0 map.get($sizes, minimal-mobile-padding);
+
+			.infoContainer {
+				width: 100%;
+
+				&__title {
+					font-size: 2.4rem;
+				}
+
+				&__text {
+					font-size: 2rem;
+				}
+			}
+
+			.divider {
+				width: 97px;
+				height: 0;
+				margin: 42px auto;
+			}
+
+			.exhibitionsContainer {
+				align-items: center;
+				width: 100%;
+
+				&__title {
+					align-self: flex-start;
+					font-size: 2.4rem;
+				}
+
+				.innerExihitions {
+					width: 100%;
+					height: 432px;
+					padding: 0;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,123 @@
+@use 'sass:map';
+
+@import '../../../../styles/variables.scss';
+
+.container {
+	display: flex;
+	flex-direction: column;
+	padding: 0 64px 144px;
+	margin-top: 117px;
+
+	.headerContainer {
+		display: flex;
+		align-items: center;
+		margin-top: 56px;
+
+		&__title {
+			margin-inline-end: 64px;
+			font-size: 190px;
+			font-weight: 500;
+			color: #268741;
+		}
+
+		&__icon {
+			width: 62px;
+			height: 37px;
+			cursor: pointer;
+			fill: #1e1e1e;
+			transition: transform 0.3s ease-in-out;
+
+			&:hover {
+				transition: transform 0.3s ease-in-out;
+				transform: rotate(-90deg);
+			}
+		}
+	}
+
+	.subTitle {
+		display: none;
+	}
+
+	.yearsList {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+
+		&__item {
+			font-size: 3.6rem;
+			font-weight: 400;
+			color: #1e1e1e;
+
+			&--selected {
+				font-weight: 600;
+				color: #268741;
+			}
+		}
+
+		&__item:not(:last-child) {
+			margin-inline-end: 32px;
+		}
+
+		&__item:first-child {
+			text-decoration: underline;
+		}
+	}
+}
+
+@media (max-width: map.get($sizes, main-mobile-width)) {
+	.container {
+		display: flex;
+		flex-direction: column;
+		padding: 0 0 104px;
+		margin-top: 48px;
+
+		.headerContainer {
+			display: flex;
+			align-items: center;
+			padding-inline: 16px;
+			margin-top: 0;
+
+			&__title {
+				margin-inline-end: 16px;
+				font-size: 64px;
+				color: #1e1e1e;
+			}
+
+			&__icon {
+				width: 24px;
+				height: 14px;
+			}
+		}
+
+		.subTitle {
+			display: block;
+			width: fit-content;
+			padding-inline: 16px;
+			margin-bottom: 8px;
+			font-size: 2.4rem;
+			font-weight: 500;
+			color: #1e1e1e;
+		}
+
+		.yearsList {
+			gap: 8px 0;
+			padding: 0 16px 8px;
+			margin-top: 8px;
+			overflow-x: auto;
+
+			&__item {
+				font-size: 2.4rem;
+				font-weight: 400;
+
+				&--selected {
+					font-weight: 600;
+					color: #268741;
+				}
+			}
+
+			&__item:not(:last-child) {
+				margin-inline-end: 16px;
+			}
+		}
+	}
+}

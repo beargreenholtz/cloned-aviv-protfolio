@@ -1,0 +1,49 @@
+@use 'sass:map';
+
+@import '../../../../styles/variables.scss';
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.container {
+	position: relative;
+
+	&__image {
+		position: absolute;
+		left: -300px;
+		object-fit: cover;
+
+		&--visible {
+			animation: fade-in 0.7s ease-in-out;
+		}
+	}
+
+	&__link {
+		font-size: 9rem;
+		font-weight: 600;
+		color: #fff;
+		text-decoration: none;
+	}
+}
+
+@media (max-width: map.get($sizes, main-mobile-width)) {
+	.container {
+		&__image {
+			display: none;
+		}
+
+		&__link {
+			font-size: 5.8rem;
+			font-weight: 600;
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+}

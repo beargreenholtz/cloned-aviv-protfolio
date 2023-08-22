@@ -1,0 +1,36 @@
+{
+	"kind": "singleType",
+	"collectionName": "contacts",
+	"info": {
+		"singularName": "contact",
+		"pluralName": "contacts",
+		"displayName": "Contact",
+		"description": ""
+	},
+	"options": {
+		"draftAndPublish": true
+	},
+	"pluginOptions": {},
+	"attributes": {
+		"address": {
+			"type": "string",
+			"required": true
+		},
+		"city": {
+			"type": "string",
+			"required": true
+		},
+		"country": {
+			"type": "string",
+			"required": true
+		},
+		"email": {
+			"type": "string",
+			"required": true
+		},
+		"phoneNumber": {
+			"type": "string",
+			"required": true
+		}
+	}
+}
